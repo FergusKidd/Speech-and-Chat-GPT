@@ -96,4 +96,7 @@ while run == True:
     speak(response)
     user_chat.append({"role":"system","content":response})
 
+    if response == 'end chat':
+        break
+
     continue
