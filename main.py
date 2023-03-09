@@ -90,13 +90,16 @@ user_chat = [{"role": "system", "content": "You are a helpful assistant. Keep re
 
 while run == True:
 
-    user_chat.append({"role":"user","content":str(recognize_from_microphone())})
+    user_response = str(recognize_from_microphone())
+    user_chat.append({"role":"user","content":user_response})
 
     response = ask_openai_chat(user_chat)
     speak(response)
     user_chat.append({"role":"system","content":response})
 
-    if response == 'end chat':
+    print(response)
+
+    if user_response == 'End chat.':
         break
 
     continue
