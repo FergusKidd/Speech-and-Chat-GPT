@@ -40,7 +40,10 @@ def speak(text):
     """
     key, region = get_speech_keys()
     speech_config = SpeechConfig(subscription=key, region=region)
-    speech_config.speech_synthesis_voice_name = "en-GB-RyanNeural"
+    speech_config.endpoint_id = "fdf6f8b8-06af-4ee1-ab39-72e9dfb56762"
+    speech_config.speech_synthesis_voice_name = "Fergus2Neural"
+    #speech_config.speech_synthesis_voice_name = "en-GB-RyanNeural"
+    
     audio_config = AudioOutputConfig(use_default_speaker=True)
     synthesizer = SpeechSynthesizer(
         speech_config=speech_config, audio_config=audio_config
